@@ -1,0 +1,15 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz Econômico · Painel</title>
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#1E3A8A,#3B82F6);font-family:system-ui,sans-serif;padding:24px}
+.c{background:#fff;border-radius:20px;padding:28px;max-width:420px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+h1{font-size:1.4rem;margin:.4em 0}p{color:#334155;line-height:1.5}.i{font-size:3rem}</style></head><body>
+<div class="c"><div class="i" id="i">⏳</div><h1 id="t">Painel do Quiz Econômico</h1><p id="p"></p></div>
+<script>
+var m=new URLSearchParams(location.search).get("m")||"";
+var M={ok:["✅","Pronto!","O painel do Quiz Econômico já pode ler os ganhos do AdMob. Pode fechar esta página."],
+vencido:["⌛","Link vencido","Este link não vale mais. Peça um novo ao Claude."],
+semconta:["⚠️","Conta sem AdMob","A autorização deu certo, mas esta conta Google não tem AdMob. Entre com a conta dona do AdMob e peça um novo link ao Claude."],
+erro:["❌","Não deu certo","O Google não devolveu a autorização. Tente de novo ou peça um novo link ao Claude."],
+falta:["🛠️","Falta configurar","O servidor ainda não tem as chaves do AdMob. Avise o Claude."]};
+var x=M[m]||M.erro;document.getElementById("i").textContent=x[0];document.getElementById("t").textContent=x[1];document.getElementById("p").textContent=x[2];
+</script></body></html>
